@@ -3,170 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Secreto de La Pasadita</title>
+    <title>El Secreto de La Pasadita | Sabiduría Oculta</title>
     <style>
-        /* Diseño Dark Mode y UI/UX Responsivo */
+        /* Variables de Color y Tipografía */
         :root {
-            --bg-color: #0d0d0d;
-            --text-main: #f2f2f2;
-            --text-muted: #a0a0a0;
-            --accent-gold: #d4af37;
-            --accent-neon: #8a2be2;
+            --bg-base: #050505;
+            --bg-card: #121212;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --accent-gold: #c5a059;
+            --accent-crimson: #8b0000;
+            --accent-glow: rgba(197, 160, 89, 0.15);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-base);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 600px; /* Optimizado para móviles */
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
 
-        /* Hero Section */
+        /* Hero Section (El Gancho) */
         .hero {
             text-align: center;
-            padding: 4rem 0 2rem;
+            padding: 6rem 0 4rem;
+            position: relative;
+            background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-base) 70%);
             border-bottom: 1px solid #222;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
             color: var(--accent-gold);
-            line-height: 1.2;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
-        .hero p {
-            font-size: 1.1rem;
+        .hero p.subtitle {
+            font-size: 1.25rem;
             color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(139, 0, 0, 0.2);
+            color: #ff4d4d;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent-crimson);
+        }
+
+        /* Información Extensa (El Morbo) */
+        .deep-info {
+            padding: 5rem 0;
+        }
+
+        .deep-info h2 {
+            font-size: 2rem;
             margin-bottom: 2rem;
+            color: #fff;
+            text-align: center;
         }
 
-        /* Sección de Misterio */
-        .mystery-section {
-            padding: 3rem 0;
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
 
-        .mystery-section h2 {
-            font-size: 1.5rem;
-            color: var(--accent-neon);
+        @media (min-width: 600px) {
+            .info-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .info-block {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.3s ease;
+        }
+
+        .info-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .info-block h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Testimonios Profesionales */
+        .testimonials-section {
+            padding: 4rem 0;
+            background-color: #0a0a0a;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        .testimonial-card {
+            background: var(--bg-base);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
-        .mystery-section p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        /* Catálogo Curioso */
-        .curious-catalog {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding-bottom: 3rem;
-        }
-
-        .card {
-            background: #151515;
-            border-left: 4px solid var(--accent-gold);
-            padding: 1.5rem;
-            border-radius: 4px;
-        }
-
-        .card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* CTA y Footer */
-        .cta-section {
-            text-align: center;
-            padding: 3rem 0;
-            background: linear-gradient(0deg, #111 0%, #0d0d0d 100%);
-        }
-
-        .cta-section p {
-            margin-bottom: 2rem;
+        .testimonial-text {
             font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #ccc;
         }
 
-        .btn {
+        .testimonial-author {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .helpful-counter {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .helpful-counter span {
+            background: #222;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* CTA Final */
+        .cta-container {
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .cta-container h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
             display: inline-block;
-            background-color: var(--accent-gold);
+            background: linear-gradient(135deg, #c5a059 0%, #8b6914 100%);
             color: #000;
             text-decoration: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 50px;
+            margin-top: 2rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
         }
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4);
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 1.5rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <!-- Hero Section -->
-        <header class="hero">
-            <h1>¿Sientes pesadez? No es el estrés de la semana.</h1>
-            <p>Es la energía que estás cargando. Descubre los secretos de herbolaria y misticismo que la ciencia apenas intenta explicar.</p>
-        </header>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <span class="tag">Conocimiento Ancestral Restringido</span>
+            <h1>Hay pesos que no se miden en básculas.</h1>
+            <p class="subtitle">Descubre los secretos de herbolaria y misticismo que la ciencia moderna ignora, pero que tu cuerpo y tu entorno reclaman en silencio.</p>
+        </div>
+    </header>
 
-        <!-- Sección de Misterio -->
-        <section class="mystery-section">
-            <h2>El rincón que las farmacias no entienden</h2>
-            <p>¿Insomnio inexplicable, malas rachas o simplemente sientes que el ambiente en tu cuarto está pesado? Tenemos la protección exacta que necesitas.</p>
-            <p>No es magia de película, es sabiduría pura. Atados para limpias profundas y remedios ancestrales que apagan la ansiedad cuando más lo necesitas.</p>
-        </section>
+    <!-- Información Extensa y Misteriosa -->
+    <section class="deep-info container">
+        <h2>Lo que nadie te dice sobre tu cansancio</h2>
+        <div class="info-grid">
+            <div class="info-block">
+                <h3>El origen de las "malas rachas" 👁️</h3>
+                <p>A veces no es falta de esfuerzo, es energía estancada. La envidia, el estrés ajeno y las miradas densas se adhieren a tu espacio personal y a tu negocio como polvo invisible. Nuestra selección de resinas puras y atados de limpieza barren con lo que no puedes ver, pero sí puedes sentir.</p>
+            </div>
+            <div class="info-block">
+                <h3>Insomnio que no es médico 🌙</h3>
+                <p>¿Te despiertas siempre a la misma hora de la madrugada con una sensación de pesadez? Antes de recurrir a químicos que adormecen tu mente, la herbolaria sagrada actúa como un escudo protector para tu sistema nervioso. Tinturas y preparados que apagan la mente y sellan tu descanso.</p>
+            </div>
+            <div class="info-block">
+                <h3>El "Detox" Oculto 🌿</h3>
+                <p>No hablamos solo de digestión. Hablamos de purgar el cuerpo de toxinas emocionales y físicas acumuladas por entornos tóxicos. Conocemos la combinación exacta de raíces y hojas que las farmacias comerciales jamás embotellarán por ser demasiado efectivas.</p>
+            </div>
+            <div class="info-block">
+                <h3>Protección Reactiva 🛡️</h3>
+                <p>No necesitas creer en magia para ver los resultados. Los cuarzos y las esencias naturales actúan como filtros de frecuencia en tu hogar. Es pura física y botánica antigua trabajando a tu favor mientras duermes, trabajas o recibes visitas en tu casa.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Catálogo Curioso -->
-        <section class="curious-catalog">
-            <div class="card">
-                <h3>Rescate de Emergencia 💧</h3>
-                <p>Gotas y tinturas naturales para esos días donde ni el café ni dormir 8 horas te salvan. Reactiva tu cuerpo desde adentro.</p>
+    <!-- Testimonios Profesionales -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Registros de quienes ya cruzaron la puerta</h2>
+            
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Sinceramente yo era el más escéptico. Llevaba 4 meses con mi local vacío y un dolor de cuello insoportable que ningún analgésico quitaba. Fui a La Pasadita por recomendación, me dieron un preparado de limpieza para el piso de mi negocio y un sahumerio. Al tercer día, las ventas volvieron y pude dormir de corrido."</p>
+                <div class="testimonial-author">— Roberto G., Emprendedor Local</div>
+                <div class="helpful-counter">
+                    <span>👍 412</span> A personas les resultó útil este testimonio.
+                </div>
             </div>
-            <div class="card">
-                <h3>El Escudo Invisible 🛡️</h3>
-                <p>Inciensos de resinas puras, cuarzos y veladoras. Porque nunca sabes realmente quién entra a tu espacio dejando sus malas vibras.</p>
-            </div>
-            <div class="card">
-                <h3>Detox Ancestral 🌿</h3>
-                <p>La mezcla exacta de plantas secas para limpiar a profundidad lo que sea que tu cuerpo y tu mente hayan acumulado este fin de semana.</p>
-            </div>
-        </section>
 
-    </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"La atención es de otro nivel. Entienden exactamente lo que sientes sin que tengas que dar muchas explicaciones. Fui buscando algo para la 'ansiedad' y me explicaron cómo ciertas personas estaban drenando mi energía. Las gotas que me prepararon me regresaron la paz que llevaba años buscando."</p>
+                <div class="testimonial-author">— Mariana V., Estudiante Universitaria</div>
+                <div class="helpful-counter">
+                    <span>👍 289</span> A personas les resultó útil este testimonio.
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Hay secretos que las abuelas sabían y que la medicina de hoy quiere borrar. En La Pasadita mantienen viva esa protección. Sus veladoras preparadas y la herbolaria a granel son auténticas, nada comercial. Es el único lugar en el que confío para proteger a mi familia de malas intenciones."</p>
+                <div class="testimonial-author">— Carmen L., Madre de familia</div>
+                <div class="helpful-counter">
+                    <span>👍 534</span> A personas les resultó útil este testimonio.
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- CTA Final -->
-    <section class="cta-section container">
-        <p>Atrévete a cruzar la puerta. Visítanos, muestra esta pantalla desde tu celular en el mostrador y desbloquea un secreto (y un descuento).</p>
-        <!-- Reemplaza el '#' con tu enlace real de Google Maps -->
-        <a href="#" class="btn" target="_blank">Revelar Ubicación Secreta</a>
+    <section class="cta-container container">
+        <h2>¿Estás listo para dejar esa carga atrás?</h2>
+        <p>No dejes que pase otro día. Conoce el santuario de remedios que tu intuición ha estado buscando.</p>
+        
+        <!-- Reemplaza el '#' con el link real a tu ubicación en Google Maps -->
+        <a href="#" class="btn-primary" target="_blank">Revelar Ubicación Secreta</a>
+        
+        <p class="disclaimer">* Promoción oculta: Muestra esta pantalla sin decir una palabra cuando llegues a la caja y obtendrás un beneficio exclusivo en tu protección personal.</p>
     </section>
 
 </body>
