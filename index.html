@@ -33,7 +33,7 @@
 
         .container {
             width: 100%;
-            max-width: 500px; /* Ancho optimizado para simular la vista móvil perfecta */
+            max-width: 500px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
@@ -83,11 +83,10 @@
             margin: 2rem 0;
         }
 
-        /* La línea central/lateral */
         .timeline::before {
             content: '';
             position: absolute;
-            left: 15px; /* Alineado a la izquierda para móviles */
+            left: 15px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -100,7 +99,6 @@
             margin-bottom: 3.5rem;
         }
 
-        /* El punto de la línea de tiempo */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -117,13 +115,12 @@
 
         .timeline-item img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 1rem;
             border: 1px solid #1a2e20;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            filter: brightness(0.8) contrast(1.2);
         }
 
         .timeline-item h3 {
@@ -137,10 +134,10 @@
             font-size: 0.95rem;
         }
 
-        /* Testimonios Rápidos */
+        /* Testimonios e Hilos de Respuesta */
         .testimonials {
             background: var(--bg-card);
-            padding: 3rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
             margin-bottom: 4rem;
             border: 1px solid #142b1d;
@@ -154,8 +151,8 @@
         }
 
         .review {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid #1c3625;
         }
 
@@ -167,21 +164,59 @@
 
         .stars {
             color: var(--accent-green);
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 0.3rem;
+            letter-spacing: 2px;
         }
 
-        .review p {
+        .review-text {
             font-size: 1rem;
             font-style: italic;
             color: #d1e0d7;
             margin-bottom: 0.5rem;
         }
 
-        .review span {
+        .author {
             font-size: 0.85rem;
             color: var(--text-muted);
             font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos de la Respuesta (Comentario Random) */
+        .reply-thread {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #1c3625;
+        }
+
+        .reply-icon {
+            color: var(--accent-dark-green);
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .reply-content {
+            background: rgba(46, 204, 113, 0.05);
+            padding: 0.8rem 1rem;
+            border-radius: 0 12px 12px 12px;
+            border-left: 3px solid var(--accent-dark-green);
+        }
+
+        .reply-content p {
+            font-size: 0.9rem;
+            color: #b0c4b7;
+            margin-bottom: 0.3rem;
+        }
+
+        .reply-author {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-weight: 600;
         }
 
         /* CTA Botón Flotante/Fijo */
@@ -215,7 +250,6 @@
             color: #557060;
             margin-top: 1.2rem;
         }
-
     </style>
 </head>
 <body>
@@ -233,46 +267,89 @@
         <section class="timeline">
             
             <div class="timeline-item">
-                <img src="https://images.unsplash.com/photo-1608681290372-97217fb04ba4?auto=format&fit=crop&w=600&q=80" alt="Hierbas secas">
+                <img src="productos misticos.jpg" alt="Mercado místico y lectura de aura">
                 <h3>El origen de las rachas 👁️</h3>
-                <p>La envidia y las miradas densas se adhieren como polvo invisible. Nuestros atados barren con lo que no puedes ver, pero sí sientes.</p>
+                <p>La envidia y las miradas densas se adhieren como polvo invisible. Nuestros atados y esencias barren con lo que no puedes ver, pero sí sientes.</p>
             </div>
 
             <div class="timeline-item">
-                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt="Incienso humeante">
+                <img src="cuarzos y misticidad.jpg" alt="Cuarzos, velas y misticismo">
                 <h3>Insomnio inexplicable 🌙</h3>
-                <p>¿Te despiertas siempre a la misma hora? La herbolaria sagrada actúa como un escudo para tu sistema nervioso. Apaga la mente y sella tu descanso.</p>
+                <p>¿Te despiertas siempre a la misma hora? La herbolaria sagrada y los cuarzos actúan como un escudo para tu sistema nervioso. Apaga la mente y sella tu descanso.</p>
             </div>
 
             <div class="timeline-item">
-                <img src="https://images.unsplash.com/photo-1560364898-132924fb3de6?auto=format&fit=crop&w=600&q=80" alt="Cuarzos y misticismo">
+                <img src="hierbas secas.jpg" alt="Cuencos con hierbas secas variadas">
                 <h3>El Detox Oculto 🌿</h3>
-                <p>Purgamos toxinas emocionales. La combinación exacta de raíces que las farmacias comerciales jamás embotellarán por ser demasiado efectivas.</p>
+                <p>Purgamos toxinas emocionales. La combinación exacta de raíces y plantas que las farmacias comerciales jamás embotellarán por ser demasiado efectivas.</p>
             </div>
 
         </section>
 
-        <!-- Testimonios Breves e Impactantes -->
+        <!-- Testimonios con Hilos de Respuesta -->
         <section class="testimonials">
             <h2>Lo que dicen quienes ya cruzaron la puerta</h2>
             
+            <!-- Testimonio 1 -->
             <div class="review">
                 <div class="stars">★★★★★</div>
-                <p>"Tres meses con el local vacío. Un sahumerio de este lugar y las ventas regresaron al tercer día. Cero escepticismo ahora."</p>
-                <span>— Roberto G.</span>
+                <p class="review-text">"Tres meses con el local vacío. Un sahumerio de este lugar y las ventas regresaron al tercer día. Cero escepticismo ahora."</p>
+                <span class="author">— Roberto G.</span>
+                
+                <div class="reply-thread">
+                    <div class="reply-icon">↳</div>
+                    <div class="reply-content">
+                        <p>"¡Me pasó exactamente lo mismo! Yo tenía una rachita de mala suerte en mi estética y con una limpia del local todo fluyó. 100% recomendados."</p>
+                        <span class="reply-author">@Ana_Paola92</span>
+                    </div>
+                </div>
             </div>
 
+            <!-- Testimonio 2 -->
             <div class="review">
                 <div class="stars">★★★★★</div>
-                <p>"Me quitaron una pesadez en el cuello que ninguna pastilla pudo. Entienden qué energía traes cargando con solo verte."</p>
-                <span>— Mariana V.</span>
+                <p class="review-text">"Me quitaron una pesadez en el cuello que ninguna pastilla pudo. Entienden qué energía traes cargando con solo verte entrar."</p>
+                <span class="author">— Mariana V.</span>
+                
+                <div class="reply-thread">
+                    <div class="reply-icon">↳</div>
+                    <div class="reply-content">
+                        <p>"Confirmo. Fui la semana pasada y nada más de cruzar la puerta se siente una paz increíble. El preparado de gotas me salvó en mis exámenes de la universidad."</p>
+                        <span class="reply-author">@DiegoTrejo_</span>
+                    </div>
+                </div>
             </div>
 
+            <!-- Testimonio 3 -->
             <div class="review">
                 <div class="stars">★★★★★</div>
-                <p>"Magia pura y herbolaria real. Protegí mi casa de envidias familiares y el ambiente cambió por completo."</p>
-                <span>— Carmen L.</span>
+                <p class="review-text">"Llevaba semanas sin poder dormir bien, sentía que alguien me observaba en mi cuarto. Compré el kit de protección y por fin descanso de corrido."</p>
+                <span class="author">— Sofía M.</span>
+                
+                <div class="reply-thread">
+                    <div class="reply-icon">↳</div>
+                    <div class="reply-content">
+                        <p>"Uy, yo estaba igual de asustada. Te sugiero también preguntar por el incienso de copal puro que venden ahí, te deja el cuarto súper ligero."</p>
+                        <span class="reply-author">@Valeria_Cantu</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- Testimonio 4 -->
+            <div class="review">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"No creía en estas cosas hasta que mi abuela me mandó por unas hierbas para el estómago. Tienen un don, mantienen viva la medicina de antes."</p>
+                <span class="author">— Carlos J.</span>
+                
+                <div class="reply-thread">
+                    <div class="reply-icon">↳</div>
+                    <div class="reply-content">
+                        <p>"La atención es súper tradicional y auténtica. Se nota a leguas que es un negocio de familia con años de conocimiento, no como las tiendas comerciales."</p>
+                        <span class="reply-author">@LuisFer_88</span>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Call to Action -->
